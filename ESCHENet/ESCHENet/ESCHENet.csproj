@@ -13,10 +13,10 @@
     <RepositoryUrl>https://github.com/Eschechola/ESCHENet</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageTags>#DOTNET #CSHARP #FRAMEWORK</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageIconUrl>https://eschechola.com.br/images/icon.png</PackageIconUrl>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

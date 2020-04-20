@@ -17,7 +17,7 @@ namespace ESCHENet.Crypto.Functions
         }
 
         //palavra new oculta o método herdado Decrypt
-        public new static string Encrypt(string text)
+        public string Encrypt(string text)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace ESCHENet.Crypto.Functions
         }
 
         //palavra new oculta o método herdado Decrypt
-        public new static string Decrypt(string text)
+        public string Decrypt(string text)
         {
             try
             {

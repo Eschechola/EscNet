@@ -24,8 +24,8 @@ namespace ESCHENet.Crypto.Functions
             return report;
         }
 
-        private new static string Encrypt(string text) => string.Empty;
+        public string Encrypt(string text) => string.Empty;
 
-        private new static string Decrypt(string text) => string.Empty;
+        public string Decrypt(string text) => string.Empty;
     }
 }

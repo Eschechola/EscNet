@@ -1,9 +1,8 @@
 ﻿namespace ESCHENet.Crypto.Interfaces
 {
-    public abstract class ICrypto
+    public interface ICrypto
     {
-        public static string Encrypt(string text) => string.Empty;
-        
-        public static string Decrypt(string text) => string.Empty;
+        string Encrypt(string text);
+        string Decrypt(string text);
     }
 }
