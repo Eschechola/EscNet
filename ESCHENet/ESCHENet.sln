@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESCHENet.Emails", "ESCHENet.Email\ESCHENet.Emails.csproj", "{280194B0-23B7-4A8D-9ED0-59672C851021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESCHENet.Tests", "ESCHENet.Tests\ESCHENet.Tests.csproj", "{ED56DB10-E0B7-4531-BA24-614BC98694D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESCHENet.Http", "ESCHENet.Http\ESCHENet.Http.csproj", "{21701315-4E6F-4C56-A49A-925FC9153E04}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESCHENet.Crypto", "ESCHENet.Crypto\ESCHENet.Crypto.csproj", "{DA141B9B-1C4A-4BA3-99DC-6EF3B1B788CB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESCHENet.Tests", "ESCHENet.Tests\ESCHENet.Tests.csproj", "{ED56DB10-E0B7-4531-BA24-614BC98694D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESCHENet", "ESCHENet\ESCHENet.csproj", "{D7CB0390-4D0E-4F41-A405-7C3E843D9B94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{280194B0-23B7-4A8D-9ED0-59672C851021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{280194B0-23B7-4A8D-9ED0-59672C851021}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{280194B0-23B7-4A8D-9ED0-59672C851021}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{280194B0-23B7-4A8D-9ED0-59672C851021}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21701315-4E6F-4C56-A49A-925FC9153E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21701315-4E6F-4C56-A49A-925FC9153E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21701315-4E6F-4C56-A49A-925FC9153E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21701315-4E6F-4C56-A49A-925FC9153E04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA141B9B-1C4A-4BA3-99DC-6EF3B1B788CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA141B9B-1C4A-4BA3-99DC-6EF3B1B788CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA141B9B-1C4A-4BA3-99DC-6EF3B1B788CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA141B9B-1C4A-4BA3-99DC-6EF3B1B788CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED56DB10-E0B7-4531-BA24-614BC98694D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED56DB10-E0B7-4531-BA24-614BC98694D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED56DB10-E0B7-4531-BA24-614BC98694D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED56DB10-E0B7-4531-BA24-614BC98694D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CB0390-4D0E-4F41-A405-7C3E843D9B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CB0390-4D0E-4F41-A405-7C3E843D9B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CB0390-4D0E-4F41-A405-7C3E843D9B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CB0390-4D0E-4F41-A405-7C3E843D9B94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
