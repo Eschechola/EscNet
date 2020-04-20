@@ -35,19 +35,7 @@ namespace ESCHENet.Crypto.Functions
                 character = Convert.ToChar(text[i]);
                 asciiNumber = character;
 
-                //se estiver entre os caracteres a-zA-Z
-                if (asciiNumber >= 32 && asciiNumber <= 46)
-                {
-                    encriptedText += (char)(asciiNumber);
-                }
-                else if (asciiNumber > 115)
-                {
-                    encriptedText += (char)(asciiNumber - 26 + Keyup);
-                }
-                else
-                {
-                    encriptedText += (char)(asciiNumber + Keyup);
-                }
+                encriptedText += (char)(asciiNumber + Keyup);
             }
 
             return encriptedText;
@@ -75,19 +63,7 @@ namespace ESCHENet.Crypto.Functions
                 character = Convert.ToChar(text[i]);
                 asciiNumber = character;
 
-                //se estiver entre os caracteres a-zA-Z
-                if (asciiNumber >= 32 && asciiNumber <= 46)
-                {
-                    textDecripted += (char)(asciiNumber);
-                }
-                else if (asciiNumber < 104)
-                {
-                    textDecripted += (char)(asciiNumber - Keyup + 26);
-                }
-                else
-                {
-                    textDecripted += (char)(asciiNumber - Keyup);
-                }
+                textDecripted += (char)(asciiNumber - Keyup);
             }
 
             return textDecripted;

@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ESCHENet.Http.Functions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ESCHENet.Tests.Http
 {
@@ -6,9 +8,12 @@ namespace ESCHENet.Tests.Http
     public class HttpTests
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteGetRequestIPTest()
         {
+            IHttpContextAccessor Context = new HttpContextAccessor();
+            var ip = new IP(Context).GetRequestIP();
 
+            Assert.IsTrue(true);
         }
     }
 }
