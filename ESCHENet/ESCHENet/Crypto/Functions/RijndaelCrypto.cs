@@ -22,7 +22,11 @@ namespace ESCHENet.Crypto.Functions
 
         private void ValidateKey(string key)
         {
-            if (key.Length != 16 && key.Length != 24)
+            if (key.Length < 16 || key.Length > 32)
+            {
+                throw new Exception("The encryption key must be 16 OR 24 characters");
+            }
+            else if(key.Length % 8 != 0)
             {
                 throw new Exception("The encryption key must be 16 OR 24 characters");
             }
