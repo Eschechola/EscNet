@@ -9,6 +9,13 @@ namespace ESCHENet.Tests.Configuration
         [TestMethod]
         public void ExecuteConfigurationInjectionTest()
         {
+            /*
+            *
+            * Exemplo: Acessar arquivo de configuração
+            *
+            */
+
+
             var Configuration = SettingsInjection.Configuration;
 
             var text = Configuration["Test"];

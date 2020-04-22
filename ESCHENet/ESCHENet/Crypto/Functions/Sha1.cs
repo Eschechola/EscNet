@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace ESCHENet.Crypto.Functions
 {
-    public class Sha1 : ICrypto
+    public class Sha1 : IHash
     {
         private readonly SHA1CryptoServiceProvider cryptoTransformSHA1;
 
@@ -23,9 +23,5 @@ namespace ESCHENet.Crypto.Functions
 
             return report;
         }
-
-        public string Encrypt(string text) => string.Empty;
-
-        public string Decrypt(string text) => string.Empty;
     }
 }

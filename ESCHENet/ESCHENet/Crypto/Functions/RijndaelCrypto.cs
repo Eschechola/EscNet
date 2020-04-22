@@ -24,11 +24,11 @@ namespace ESCHENet.Crypto.Functions
         {
             if (key.Length < 16 || key.Length > 32)
             {
-                throw new Exception("The encryption key must be 16 OR 24 characters");
+                throw new Exception("The encryption key must be 16 OR 32 characters");
             }
             else if(key.Length % 8 != 0)
             {
-                throw new Exception("The encryption key must be 16 OR 24 characters");
+                throw new Exception("The encryption key must be 16 OR 32 characters");
             }
         }
 

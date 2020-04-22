@@ -7,9 +7,9 @@ namespace ESCHENet.Configuration
 {
     public class SettingsInjection
     {
-        private static IConfigurationRoot _config = null;
+        private static IConfiguration _config = null;
 
-        public static IConfigurationRoot Configuration
+        public static IConfiguration Configuration
         {
             get
             {
@@ -23,7 +23,7 @@ namespace ESCHENet.Configuration
         }
 
 
-        private static IConfigurationRoot InjectSettings()
+        private static IConfiguration InjectSettings()
         {
             try
             {
