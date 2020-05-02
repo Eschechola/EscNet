@@ -18,4 +18,21 @@
     <li><a href="#">Configuration Injection (appsettings.json)</a></li>
 </ul>
 
+<br><br>
 
+# Reporting security issues and bugs
+
+<p>In case of any error or security breach, please report immediately and in a totally private way, because only in this way will I be able to improve the Micro Framework and its usability more and more, you can alert me through the email <a href="mailto:lucas.eschechola@outlook.com">lucas.eschechola@outlook.com</a> or <a href="mailto:suporte@eschechola.com.br">suporte@eschechola.com.br</a>, if you prefer you can contact me directly through my <a href="https://www.linkedin.com/in/lucas-eschechola-769179166/">LinkedIn</a>, thanks!</p>
+
+<br></br>
+
+
+# Keep learning
+
+<p>If you want to continue learning and learn more and more about my framework or the .NET platform in general, <strong>I invite you to access my <a href="https://eschechola.com.br">blog</a></strong>, where I post articles and technical podcasts focused on Microsoft technologies, more specifically on ASP .NET Core and everything that includes it, you can access my blog by clicking <a href="https://eschechola.com.br">here</a> or by going to the link:</p>
+<br>
+<a href="https://eschechola.com.br">https://eschechola.com.br</a>
+
+<br><br>
+
+<p align="center">2020</p>
