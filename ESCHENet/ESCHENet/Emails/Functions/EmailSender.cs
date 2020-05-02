@@ -2,20 +2,42 @@
 using System.Net.Mail;
 using System.Collections.Generic;
 using ESCHENet.Emails.Model;
+using ESCHENet.Emails.Enums;
+using ESCHENet.ExtensionMethods;
 
 namespace ESCHENet.Emails.Functions
 {
     public class EmailSender
     {
+        
         private string SenderEmail { get; set; }
         private string SenderPassword { get; set; }
-        private IList<string> EmailsToCopy { get; set; } 
+
+        //config properties
+        private IList<string> EmailsToCopy = new List<string>();
+        private SmtpType SmtpType = SmtpType.Gmail;
+        private string AnotherSMTP = string.Empty;
+        private int Port = 587;
 
         public EmailSender(string senderEmail, string senderPassword)
         {
             SenderEmail = senderEmail;
             SenderPassword = senderPassword;
-            EmailsToCopy = new List<string>();
+        }
+
+        public void SetPort(int port)
+        {
+            Port = port;
+        }
+
+        public void SetSMTP(string smtp)
+        {
+            AnotherSMTP = smtp;
+        }
+
+        public void SetSMTP(SmtpType smtptype)
+        {
+            SmtpType = smtptype;
         }
 
         public void AddCopyEmail(string emailCopy)
@@ -58,10 +80,19 @@ namespace ESCHENet.Emails.Functions
             message.Body = email.Body;
 
             //instancia o cliente smtp
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            SmtpClient smtp;
+
+            if (AnotherSMTP.Equals(string.Empty))
+            {
+                smtp = new SmtpClient(SmtpType.GetStringValue());
+            }
+            else
+            {
+                smtp = new SmtpClient(AnotherSMTP);
+            }
 
             //porta que usarei pra enviar o email
-            smtp.Port = 587;
+            smtp.Port = Port;
 
             //habilita camada de segurança
             smtp.EnableSsl = true;

@@ -1,4 +1,5 @@
-﻿using ESCHENet.Emails.Functions;
+﻿using ESCHENet.Emails.Enums;
+using ESCHENet.Emails.Functions;
 using ESCHENet.Emails.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,8 +9,8 @@ namespace ESCHENet.Tests.Emails
     public class EmailsTests
     {
         //credênciais do email que vai ENVIAR a mensagem
-        private string myEmail = "[SEU EMAIL]";
-        private string myPassword = "[SUA SENHA]";
+        private string myEmail = "lucas.eschechola@outlook.com";
+        private string myPassword = "rua2.com.br";
 
         [TestMethod]
         public void ExecuteSendEmailTest()
@@ -24,6 +25,30 @@ namespace ESCHENet.Tests.Emails
 
             //instância da classe que envia o email
             var messager = new EmailSender(myEmail, myPassword);
+
+            //envia o email
+            messager.SendEmail(email);
+
+            //envia o email com formatação HTML
+            messager.SendEmail(email);
+
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void ExecuteSendEmailWithOutlookSmtpTest()
+        {
+            var email = new Email
+            {
+                Receiver = "email.destinatario@email.com",
+                Subject = "Assunto da mensagem",
+                Body = "Corpo da mensagem"
+            };
+
+
+            //instância da classe que envia o email
+            var messager = new EmailSender(myEmail, myPassword);
+            messager.SetSMTP(SmtpType.Outlook);
 
             //envia o email
             messager.SendEmail(email);

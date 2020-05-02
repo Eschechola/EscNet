@@ -13,7 +13,7 @@ namespace ESCHENet.Crypto.Functions
 
         public RijndaelCrypto(string cryptoKey)
         {
-            //valida o tamanho da chave de criptografia (Deve ter entre 16 e 24 caracteres)
+            //valida o tamanho da chave de criptografia (Deve ter entre 16 e 32 caracteres)
             ValidateKey(cryptoKey);
 
             //converte a key para base64
