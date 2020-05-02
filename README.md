@@ -9,14 +9,13 @@
 # Get Started
 
 <p>Currently the framework has the following resources</p>
-<br>
 <ul>
     <li>Emails</li>
-    <li>Rijndael Cryptography</li>
-    <li>Caesar Cipher Cryptography</li>
-    <li>Sha1 Cryptographic Report</li>
-    <li>Get Request IP (ASP .NET Core)</li>
-    <li>Configuration Injection (appsettings.json)</li>
+    <li><a href="#">Rijndael Cryptography</a></li>
+    <li><a href="#">Caesar Cipher Cryptography</a></li>
+    <li><a href="#">Sha1 Cryptographic Report</a></li>
+    <li><a href="#">Get Request IP (ASP .NET Core)</a></li>
+    <li><a href="#">Configuration Injection (appsettings.json)</a></li>
 </ul>
 
 
