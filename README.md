@@ -16,10 +16,10 @@
 <ul>
     <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Emails">Emails</a></li>
     <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Rijdael-Cryptography">Rijndael Cryptography</a></li>
-    <li><a href="#">Caesar Cipher Cryptography</a></li>
-    <li><a href="#">Sha1 Cryptographic Report</a></li>
-    <li><a href="#">Get Request IP (ASP .NET Core)</a></li>
-    <li><a href="#">Configuration Injection (appsettings.json)</a></li>
+    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
+    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
+    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/IP-Requests">Get Request IP (ASP .NET Core)</a></li>
+    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Configuration-Dependency">Configuration Injection (appsettings.json)</a></li>
 </ul>
 
 <br><br>
