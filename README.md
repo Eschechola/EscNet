@@ -10,7 +10,7 @@
 
 <p>Currently the framework has the following resources</p>
 <ul>
-    <li>Emails</li>
+    <li><a href="#">Emails</a></li>
     <li><a href="#">Rijndael Cryptography</a></li>
     <li><a href="#">Caesar Cipher Cryptography</a></li>
     <li><a href="#">Sha1 Cryptographic Report</a></li>
