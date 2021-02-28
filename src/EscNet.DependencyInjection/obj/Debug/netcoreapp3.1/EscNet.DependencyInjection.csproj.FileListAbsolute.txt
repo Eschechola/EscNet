@@ -1,8 +1,0 @@
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\bin\Debug\netcoreapp3.1\EscNet.DependencyInjection.deps.json
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\bin\Debug\netcoreapp3.1\EscNet.DependencyInjection.dll
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\bin\Debug\netcoreapp3.1\EscNet.DependencyInjection.pdb
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\obj\Debug\netcoreapp3.1\EscNet.DependencyInjection.AssemblyInfoInputs.cache
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\obj\Debug\netcoreapp3.1\EscNet.DependencyInjection.AssemblyInfo.cs
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\obj\Debug\netcoreapp3.1\EscNet.DependencyInjection.csproj.CoreCompileInputs.cache
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\obj\Debug\netcoreapp3.1\EscNet.DependencyInjection.dll
-C:\Users\Lucas\Desktop\EscNet\src\EscNet.DependencyInjection\obj\Debug\netcoreapp3.1\EscNet.DependencyInjection.pdb
