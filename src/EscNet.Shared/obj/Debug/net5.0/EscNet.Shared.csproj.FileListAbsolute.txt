@@ -1,0 +1,11 @@
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\net5.0\EscNet.Shared.deps.json
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\net5.0\EscNet.Shared.dll
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\net5.0\ref\EscNet.Shared.dll
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\net5.0\EscNet.Shared.pdb
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\EscNet.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\EscNet.Shared.AssemblyInfoInputs.cache
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\EscNet.Shared.AssemblyInfo.cs
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\EscNet.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\EscNet.Shared.dll
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\ref\EscNet.Shared.dll
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\net5.0\EscNet.Shared.pdb

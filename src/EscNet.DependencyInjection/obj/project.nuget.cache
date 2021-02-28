@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0bhYtdSdMcd6mVCAVEI5ZroDxw4Fi1tgWtGNjbpPZgF7NYyfq4xa6Tdmxd+4w3PYSElAIKWB8FkQxFgawazBFQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\EscNet\\src\\EscNet.DependencyInjection\\EscNet.DependencyInjection.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

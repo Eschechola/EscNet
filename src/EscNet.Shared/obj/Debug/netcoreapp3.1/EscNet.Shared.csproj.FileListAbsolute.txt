@@ -1,0 +1,8 @@
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\netcoreapp3.1\EscNet.Shared.deps.json
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\netcoreapp3.1\EscNet.Shared.dll
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\bin\Debug\netcoreapp3.1\EscNet.Shared.pdb
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\netcoreapp3.1\EscNet.Shared.AssemblyInfoInputs.cache
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\netcoreapp3.1\EscNet.Shared.AssemblyInfo.cs
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\netcoreapp3.1\EscNet.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\netcoreapp3.1\EscNet.Shared.dll
+C:\Users\Lucas\Desktop\EscNet\src\EscNet.Shared\obj\Debug\netcoreapp3.1\EscNet.Shared.pdb
