@@ -23,8 +23,6 @@
     <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Rijdael-Cryptography">Rijndael Cryptography</a></li>
     <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
     <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/IP-Requests">Get Request IP (ASP .NET Core)</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Configuration-Dependency">Configuration Injection (appsettings.json)</a></li>
 </ul>
 
 <br><br>
