@@ -8,7 +8,7 @@
 
 <br><br>
 <p align="center">
-    <img src="https://i.ibb.co/JdwgLYj/wpp-blog.jpg" alt="Wallpaper Blog">
+    <img src="https://i.ibb.co/Gk9vTZF/Esc-Net-Icon.jpg" alt="Wallpaper Blog">
 </p>
 
 <br><br>
