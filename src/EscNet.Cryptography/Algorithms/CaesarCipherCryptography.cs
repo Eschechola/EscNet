@@ -1,5 +1,6 @@
 ﻿using EscNet.Cryptography.Interfaces.Cryptography;
 using EscNet.Shared.Exceptions;
+using EscNet.Shared.Validators;
 using System;
 
 namespace EscNet.Cryptography.Algorithms
@@ -16,7 +17,7 @@ namespace EscNet.Cryptography.Algorithms
 
         public string Encrypt(string text)
         {
-            ValidateText(text);
+            Validator.ValidateStringIsNotNullOrEmpty(text);
 
             string encriptedText = string.Empty;
             char character = ' ';
@@ -42,7 +43,7 @@ namespace EscNet.Cryptography.Algorithms
 
         public string Decrypt(string text)
         {
-            ValidateText(text);
+            Validator.ValidateStringIsNotNullOrEmpty(text);
 
             string decryptedText = string.Empty;
             char character = ' ';
@@ -70,12 +71,6 @@ namespace EscNet.Cryptography.Algorithms
         {
             if (keyup <= 0)
                 throw new InvalidKeyUpException("Keyup must be greater than or equal 1");
-        }
-
-        private void ValidateText(string encryptionText)
-        {
-            if (string.IsNullOrEmpty(encryptionText))
-                throw new NullReferenceException("The text cannot be null or empty.");
         }
     }
 }

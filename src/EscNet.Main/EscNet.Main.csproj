@@ -2,10 +2,35 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>EscNet</PackageId>
+    <Authors>Lucas Eschechola</Authors>
+    <Company>CH Labs</Company>
+    <Product>EscNet</Product>
+    <Description>ESCHENet is a micro framework developed by Lucas Eschechola for automating everyday tasks, such as: sending emails, encryption and more!!</Description>
+    <PackageProjectUrl>https://github.com/Eschechola/EscNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Eschechola/EscNet</RepositoryUrl>
+    <PackageTags>#DOTNET, #CSHARP, #FRAMEWORK</PackageTags>
+    <PackageIcon>EscNet-Icon.jpg</PackageIcon>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EscNet.Cryptography\EscNet.Cryptography.csproj" />
+    <ProjectReference Include="..\EscNet.DependencyInjection\EscNet.DependencyInjection.csproj" />
+    <ProjectReference Include="..\EscNet.Mails\EscNet.Mails.csproj" />
+    <ProjectReference Include="..\EscNet.Shared\EscNet.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\EscNet-Icon.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\..\..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 using EscNet.Cryptography.Interfaces;
 using EscNet.Shared.Exceptions;
 using EscNet.Shared.Extensions;
+using EscNet.Shared.Validators;
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -21,7 +22,7 @@ namespace EscNet.Cryptography.Algorithms
 
         public string Encrypt(string text)
         {
-            ValidateText(text);
+            Validator.ValidateStringIsNotNullOrEmpty(text);
 
             byte[] encryptionKeyBytes = _encryptionKey.FromBase64();
             byte[] textBytes = new UTF8Encoding().GetBytes(text);
@@ -44,7 +45,7 @@ namespace EscNet.Cryptography.Algorithms
 
         public string Decrypt(string text)
         {
-            ValidateText(text);
+            Validator.ValidateStringIsNotNullOrEmpty(text);
 
             byte[] encryptionKeyBytes = _encryptionKey.FromBase64();
             byte[] textBytes = text.FromBase64();
@@ -65,12 +66,6 @@ namespace EscNet.Cryptography.Algorithms
             var utf8 = new UTF8Encoding();
 
             return utf8.GetString(memoryStream.ToArray());
-        }
-
-        private void ValidateText(string encryptionText)
-        {
-            if(string.IsNullOrEmpty(encryptionText))
-                throw new NullReferenceException("The text cannot be null or empty.");
         }
 
         private void ValidateEncryptionKey(string encryptionKey)

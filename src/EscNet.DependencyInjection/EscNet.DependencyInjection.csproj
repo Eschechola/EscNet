@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EscNet.Cryptography\EscNet.Cryptography.csproj" />
+    <ProjectReference Include="..\EscNet.Mails\EscNet.Mails.csproj" />
   </ItemGroup>
 
 </Project>
