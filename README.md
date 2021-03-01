@@ -2,13 +2,13 @@
 
 <br>
 
-<p>Open source micro framework made in .NET Standard, compatible with both .NET Core and .NET Framework developed by:<br><a href="https://www.linkedin.com/in/lucas-eschechola-769179166/">Lucas Eschechola</a>, built in order to automate everyday and common tasks in commercial applications, such as sending emails, encryption algorithms, encryption reports, HttpContext manipulation (ASP .NET Core), log file generation and other functionality are currently under development. EscNet is available in the NuGet library or through the following link:</p>
+<p>Open source micro framework made in .NET Standard, compatible with both .NET Core and .NET Framework developed by:<br><a href="https://www.linkedin.com/in/lucas-eschechola-769179166/">Lucas Eschechola</a>, built in order to automate everyday and common tasks in commercial applications, such as sending emails, encryption algorithms, encryption reports, log file generation and other functionality are currently under development. EscNet is available in the NuGet library or through the following link:</p>
 <br>
 <a href="https://www.nuget.org/packages/EscNet/">https://www.nuget.org/packages/EscNet/</a>
 
 <br><br>
 <p align="center">
-    <img src="https://i.ibb.co/JdwgLYj/wpp-blog.jpg" alt="Wallpaper Blog">
+    <img src="https://i.ibb.co/Gk9vTZF/Esc-Net-Icon.jpg" alt="Wallpaper Blog">
 </p>
 
 <br><br>
@@ -19,12 +19,11 @@
 
 <p>Currently the framework has the following resources</p>
 <ul>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Emails">Emails</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Rijdael-Cryptography">Rijndael Cryptography</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/IP-Requests">Get Request IP (ASP .NET Core)</a></li>
-    <li><a href="https://github.com/Eschechola/ESCHENet/wiki/Configuration-Dependency">Configuration Injection (appsettings.json)</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/0.Summary">Summary</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/1.Emails">Emails</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/2.Rijndael-Cryptography">Rijndael Cryptography</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/3.Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/4.Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
 </ul>
 
 <br><br>
