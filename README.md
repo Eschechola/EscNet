@@ -19,10 +19,11 @@
 
 <p>Currently the framework has the following resources</p>
 <ul>
-    <li><a href="https://github.com/Eschechola/EscNet/wiki/Emails">Emails</a></li>
-    <li><a href="https://github.com/Eschechola/EscNet/wiki/Rijdael-Cryptography">Rijndael Cryptography</a></li>
-    <li><a href="https://github.com/Eschechola/EscNet/wiki/Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
-    <li><a href="https://github.com/Eschechola/EscNet/wiki/Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/0.Summary">Summary</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/1.Emails">Emails</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/2.Rijndael-Cryptography">Rijndael Cryptography</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/3.Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/4.Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
 </ul>
 
 <br><br>
