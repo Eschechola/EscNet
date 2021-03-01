@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EscNet.Cryptography\EscNet.Cryptography.csproj" />
-    <ProjectReference Include="..\EscNet.Mails\EscNet.Mails.csproj" />
+    <ProjectReference Include="..\EscNet\EscNet.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Lucas Eschechola</Authors>
+    <Company>CH Labs</Company>
+    <Product>EscNet</Product>
+    <Description>EscNet is a micro framework developed by Lucas Eschechola for automating everyday tasks, such as: sending emails, encryption and more!!</Description>
+    <PackageProjectUrl>https://github.com/Eschechola/EscNet</PackageProjectUrl>
+    <PackageIcon>EscNet-Icon.jpg</PackageIcon>
+    <RepositoryUrl>https://github.com/Eschechola/EscNet</RepositoryUrl>
+    <PackageTags>#DOTNET, #CSHARP, #FRAMEWORK</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="E:\Backup Nuvem\OneDrive\Documentos\Imagens\EscNet-Icon.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+</Project>
