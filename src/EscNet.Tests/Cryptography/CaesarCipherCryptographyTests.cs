@@ -1,6 +1,7 @@
 ﻿using EscNet.Cryptography.Algorithms;
 using EscNet.Cryptography.Interfaces.Cryptography;
 using EscNet.Shared.Exceptions;
+using FluentAssertions;
 using System;
 using Xunit;
 
@@ -17,7 +18,7 @@ namespace EscNet.Tests.Cryptography
             _sut = new CaesarCipherCryptography(_keyUp);
         }
 
-        [Fact]
+        [Fact(DisplayName = "CaesarCipher instance when keyup is invalid")]
         public void CaesarCipher_ThorwsInvalidKeyUpExceptionWhenKeyUpKeyIsInvalid()
         {
             // Arrange
@@ -29,12 +30,15 @@ namespace EscNet.Tests.Cryptography
             Action actNegativeKeyUp = () => new CaesarCipherCryptography(negativeKeyUp);
 
             // Assert
-            Assert.Throws<InvalidKeyUpException>(actZeroKeyUp);
-            Assert.Throws<InvalidKeyUpException>(actNegativeKeyUp);
+            actZeroKeyUp.Should()
+                .Throw<InvalidKeyUpException>();
+
+            actNegativeKeyUp.Should()
+                .Throw<InvalidKeyUpException>();
         }
 
-        [Fact]
-        public void CaesarCipher_Encrypt_ReturnsCorrectEncryptedText()
+        [Fact(DisplayName = "Encrypt when text is correct")]
+        public void Encrypt_WhenTextIsCorrect_ReturnsCorrectEncryptedText()
         {
             // Arrange
             string text = "Hello World!";
@@ -44,22 +48,24 @@ namespace EscNet.Tests.Cryptography
             var result = _sut.Encrypt(text);
 
             // Assert
-            Assert.Equal(correctEncryptedText, result);
+            result.Should()
+                .Equals(correctEncryptedText);
         }
 
-        [Fact]
-        public void CaesarCipher_Encrypt_ThrowExceptionWhenTextToEncryptIsInvalid()
+        [Fact(DisplayName = "Encrypt when text is null or empty")]
+        public void Encrypt_WhenTextIsNullOrEmpty_ThrowsException()
         {
             // Arrange & Act
             Func<string> act = () => _sut.Encrypt(string.Empty);
 
             // Assert
-            Assert.Throws<NullReferenceException>(act);
+            act.Should()
+                .Throw<NullReferenceException>();
         }
 
 
-        [Fact]
-        public void CaesarCipher_Decrypt_ReturnsCorrectDecryptedText()
+        [Fact(DisplayName = "Dencrypt when text is correct")]
+        public void Decrypt_WhenTextIsCorrect_ReturnsCorrectDecryptedText()
         {
             // Arrange
             string text = @"Mjqqt \twqi&";
@@ -69,33 +75,19 @@ namespace EscNet.Tests.Cryptography
             var result = _sut.Decrypt(text);
 
             // Assert
-            Assert.Equal(correctDecryptedText, result);
+            result.Should()
+                .Equals(correctDecryptedText);
         }
 
-        [Fact]
-        public void CaesarCipher_Decrypt_ThrowExceptionWhenTextToDecryptIsInvalid()
+        [Fact(DisplayName = "Decrypt when text is null or empty")]
+        public void Decrypt_WhenTextIsNullOrEmpty_ThrowsException()
         {
             //Arrange & Act
             Func<string> act = () => _sut.Decrypt(string.Empty);
 
             // Assert
-            Assert.Throws<NullReferenceException>(act);
-        }
-
-        [Fact]
-        public void CaesarCipher_EncryptAndDecrypt_ReturnsCorrectTexts()
-        {
-            // Arrange
-            string decryptedText = "Hello World!";
-            string encryptedText = @"Mjqqt \twqi&";
-
-            // Act
-            var encryptResult = _sut.Encrypt(decryptedText);
-            var decryptResult = _sut.Decrypt(encryptedText);
-
-            // Assert
-            Assert.Equal(encryptedText, encryptResult);
-            Assert.Equal(decryptedText, decryptResult);
+            act.Should()
+                .Throw<NullReferenceException>();
         }
     }
 }
