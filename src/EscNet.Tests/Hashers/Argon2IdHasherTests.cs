@@ -1,18 +1,36 @@
 ﻿using EscNet.Hashers.Algorithms;
 using EscNet.Hashers.Interfaces;
 using FluentAssertions;
+using Isopoh.Cryptography.Argon2;
 using System;
+using System.Text;
 using Xunit;
 
 namespace EscNet.Tests.Hashers
 {
-    public class Sha1HasherTests
+    public class Argon2IdHasherTests
     {
         private readonly IHasher _sut;
+        private readonly int _lanes = 5;
+        private readonly int _memoryCost = 32768;
+        private readonly int _timeCost = 10;
+        private readonly string _salt = "zlqAUART49m5CI0qC1IQKpDiMjQLSRss707vvczOWs0eVsJe1XG8Y6d5umAqJlABGF5wZ1fa5GddlYOUoBNXJzp2mSJ4sSR6Apni";
 
-        public Sha1HasherTests()
+        public Argon2IdHasherTests()
         {
-            _sut = new Sha1Hasher();
+            var config = new Argon2Config
+            {
+                Type = Argon2Type.DataIndependentAddressing,
+                Version = Argon2Version.Nineteen,
+                TimeCost = _timeCost,
+                MemoryCost = _memoryCost, 
+                Lanes = _lanes,
+                Threads = Environment.ProcessorCount,
+                Salt = Encoding.UTF8.GetBytes(_salt),
+                HashLength = 20
+            };
+
+            _sut = new Argon2IdHasher(config);
         }
 
         [Fact(DisplayName = "Hash when text is null or empty")]
@@ -32,7 +50,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello World!";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$argon2i$v=19$m=32768,t=10,p=5$emxxQVVBUlQ0OW01Q0kwcUMxSVFLcERpTWpRTFNSc3M3MDd2dmN6T1dzMGVWc0plMVhHOFk2ZDV1bUFxSmxBQkdGNXdaMWZhNUdkZGxZT1VvQk5YSnpwMm1TSjRzU1I2QXBuaQ$QU2/EK1cSb793eRkMYiDrWhRh7s";
 
             // Act
             var result = _sut.Hash(text);
@@ -47,7 +65,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello World!";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$argon2i$v=19$m=32768,t=10,p=5$emxxQVVBUlQ0OW01Q0kwcUMxSVFLcERpTWpRTFNSc3M3MDd2dmN6T1dzMGVWc0plMVhHOFk2ZDV1bUFxSmxBQkdGNXdaMWZhNUdkZGxZT1VvQk5YSnpwMm1TSjRzU1I2QXBuaQ$QU2/EK1cSb793eRkMYiDrWhRh7s";
 
             // Act
             var result = _sut.VerifyHashedText(text, textHash);

@@ -1,18 +1,19 @@
 ﻿using EscNet.Hashers.Algorithms;
 using EscNet.Hashers.Interfaces;
 using FluentAssertions;
+using Scrypt;
 using System;
 using Xunit;
 
 namespace EscNet.Tests.Hashers
 {
-    public class Sha1HasherTests
+    public class BCryptHasherTests
     {
         private readonly IHasher _sut;
 
-        public Sha1HasherTests()
+        public BCryptHasherTests()
         {
-            _sut = new Sha1Hasher();
+            _sut = new BCryptHasher("$2a$11$s8BuDSLuoQuYQiiGz1YwVO");
         }
 
         [Fact(DisplayName = "Hash when text is null or empty")]
@@ -32,7 +33,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello World!";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$2a$11$s8BuDSLuoQuYQiiGz1YwVO/BVo6RZvx.kQ74DpemrSyUbMhKNxc02";
 
             // Act
             var result = _sut.Hash(text);
@@ -47,7 +48,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello World!";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$2a$11$s8BuDSLuoQuYQiiGz1YwVO/BVo6RZvx.kQ74DpemrSyUbMhKNxc02";
 
             // Act
             var result = _sut.VerifyHashedText(text, textHash);

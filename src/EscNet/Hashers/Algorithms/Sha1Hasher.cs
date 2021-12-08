@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Security.Cryptography;
-using EscNet.Hashers.Interfaces;
 using EscNet.Shared.Validators;
+using EscNet.Hashers.Interfaces.Algorithms;
 
 namespace EscNet.Hashers.Algorithms
 {

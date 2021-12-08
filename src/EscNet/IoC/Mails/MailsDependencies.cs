@@ -2,7 +2,7 @@
 using EscNet.Mails.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EscNet.DependencyInjection.IoC.Mails
+namespace EscNet.IoC.Mails
 {
     public static class MailsDependencies
     {

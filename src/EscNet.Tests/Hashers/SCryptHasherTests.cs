@@ -1,18 +1,19 @@
 ﻿using EscNet.Hashers.Algorithms;
 using EscNet.Hashers.Interfaces;
 using FluentAssertions;
+using Scrypt;
 using System;
 using Xunit;
 
 namespace EscNet.Tests.Hashers
 {
-    public class Sha1HasherTests
+    public class SCryptHasherTests
     {
         private readonly IHasher _sut;
 
-        public Sha1HasherTests()
+        public SCryptHasherTests()
         {
-            _sut = new Sha1Hasher();
+            _sut = new SCryptHasher(new ScryptEncoder());
         }
 
         [Fact(DisplayName = "Hash when text is null or empty")]
@@ -32,7 +33,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello World!";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$s2$16384$8$1$zKNQ51ZzRvP3yi4HORYxtvxpWs1bdAxBVEcpgI6ePyw=$pxrFoPZA16AVIdY0QBveCi84beIhFTyCcNS4XROHirc=";
 
             // Act
             var result = _sut.Hash(text);
@@ -47,7 +48,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello World!";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$s2$16384$8$1$zKNQ51ZzRvP3yi4HORYxtvxpWs1bdAxBVEcpgI6ePyw=$pxrFoPZA16AVIdY0QBveCi84beIhFTyCcNS4XROHirc=";
 
             // Act
             var result = _sut.VerifyHashedText(text, textHash);
@@ -62,7 +63,7 @@ namespace EscNet.Tests.Hashers
         {
             // Arrange
             var text = "Hello";
-            var textHash = "2ef7bde608ce5404e97d5f042f95f89f1c232871";
+            var textHash = "$s2$16384$8$1$zKNQ51ZzRvP3yi4HORYxtvxpWs1bdAxBVEcpgI6ePyw=$pxrFoPZA16AVIdY0QBveCi84beIhFTyCcNS4XROHircc";
 
             // Act
             var result = _sut.VerifyHashedText(text, textHash);
