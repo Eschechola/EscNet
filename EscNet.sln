@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{1EA90B90-35F8-440D-9ABF-51E7F3D0667C}"
 EndProject
@@ -11,7 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55DD1982-1DE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscNet.Tests", "src\EscNet.Tests\EscNet.Tests.csproj", "{584085E1-0E76-47FF-81C6-0D48279448A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscNet", "src\EscNet\EscNet.csproj", "{565E3171-F3BD-4EF8-8B22-E70F6597A897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscNet", "src\EscNet\EscNet.csproj", "{565E3171-F3BD-4EF8-8B22-E70F6597A897}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4DD53197-9063-4E2C-BC06-891681B58FC6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

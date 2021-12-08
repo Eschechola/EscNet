@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# SYSLIB0022: O tipo ou membro é obsoleto
+dotnet_diagnostic.SYSLIB0022.severity = silent
+
+# Default severity for all analyzer diagnostics
+dotnet_analyzer_diagnostic.severity = silent
+
+# SYSLIB0021: O tipo ou membro é obsoleto
+dotnet_diagnostic.SYSLIB0021.severity = silent
