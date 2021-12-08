@@ -1,4 +1,5 @@
 ﻿using EscNet.Mails.Enums;
+using EscNet.Mails.Extensions;
 using EscNet.Mails.Factory;
 using EscNet.Mails.Interfaces;
 using EscNet.Mails.Models;
@@ -8,78 +9,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace EscNet.Mails.Functions
 {
     public class EmailSender : IEmailSender
     {
-
         #region Private Properties
 
         private readonly string _senderEmail;
         private readonly string _senderPassword;
         private List<string> _emailsToCopy;
-        private SMTPType _smtpType;
         private int _port;
         private string _smtpUrl;
-
-        #endregion
-
-        #region Public Properties
-
-        public string SenderEmail
-        { 
-            get
-            {
-                return _senderEmail;
-            }
-        }
-
-        public string SenderPassword
-        {
-            get
-            {
-                return _senderPassword;
-            }
-        }
-
-        public List<string> EmailToCopy
-        {
-            get
-            {
-                return _emailsToCopy;
-            }
-        }
-
-        public string SmtpUrl
-        {
-            get
-            {
-                return _smtpUrl;
-            }
-        }
-
-        public int Port
-        {
-            get
-            {
-                return _port;
-            }
-        }
+        private string _mailLocalFolder;
 
         #endregion
 
         #region Constructors
 
-        public EmailSender(string senderEmail, string senderPassword)
+        public EmailSender(
+            string senderEmail,
+            string senderPassword,
+            int port = 587,
+            string mailLocalFolder = "",
+            SMTPType smtpType = SMTPType.Gmail,
+            List<string> emailsToCopy = null)
         {
             _senderEmail = senderEmail;
             _senderPassword = senderPassword;
-
-            _emailsToCopy = new List<string>();
-            _port = 587;
-            _smtpType = SMTPType.Gmail;
-            _smtpUrl = SMTPFactory.GetSMTPUrl(_smtpType);
+            _port = port;
+            _mailLocalFolder = mailLocalFolder;
+            _smtpUrl = SMTPFactory.GetSMTPUrl(smtpType);
+            _emailsToCopy = emailsToCopy ?? new List<string>();
         }
 
         #endregion
@@ -101,47 +63,86 @@ namespace EscNet.Mails.Functions
         public void SetSMTP(SMTPType smtpType)
             => _smtpUrl = SMTPFactory.GetSMTPUrl(smtpType);
 
-        public void SendEmail(Email email, bool isHtml = false, bool sendToLocalFolder = false)
+        public void SetLocalFolder(string localFolder)
+            => _mailLocalFolder = localFolder;
+
+        public async Task<bool> SendEmailAsync(
+            Email email,
+            bool isHtml = false,
+            bool sendToLocalFolder = false)
         {
-            MailMessage message = new MailMessage();
-            message.From = new MailAddress(_senderEmail);
+            MailMessage message = BuildMailMessage(email, isHtml);
+            SmtpClient smtp = CreateSMTPClient(sendToLocalFolder);
+
+            await smtp.SendMailAsync(message);
+
+            return true;
+        }
+
+        public bool SendEmail(
+            Email email,
+            bool isHtml = false,
+            bool sendToLocalFolder = false)
+        {
+            MailMessage message = BuildMailMessage(email, isHtml);
+            SmtpClient smtp = CreateSMTPClient(sendToLocalFolder);
+
+            smtp.Send(message);
+
+            return true;
+        }
+
+        private MailMessage BuildMailMessage(Email email, bool isHtml)
+        {
+            var message = new MailMessage
+            {
+                From = new MailAddress(_senderEmail),
+                Subject = email.Subject,
+                IsBodyHtml = isHtml,
+                Body = email.Body,
+            };
+
             message.To.Add(new MailAddress(email.Receiver));
 
             if (_emailsToCopy.Count > 0)
-                foreach (var emailCopy in _emailsToCopy)
-                    message.Bcc.Add(emailCopy);
+                message.AddCopyEmails(_emailsToCopy);
 
-            message.Subject = email.Subject;
-            message.IsBodyHtml = isHtml;
-            message.Body = email.Body;
+            return message;
+        }
 
-            SmtpClient smtp;
-
+        private SmtpClient CreateSMTPClient(bool sendToLocalFolder = false)
+        {
             if (sendToLocalFolder)
-            {
-                var mailDirectory = Path.Combine(Environment.CurrentDirectory, "mails");
-                DirectoryManager.CreateDirectoryIfNotExists(mailDirectory);
+                return CreateClientToLocalFolder();
+            
+            return CreateClientToRemoteMailServer();
+        }
 
-                smtp = new SmtpClient
-                {
-                    DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
-                    PickupDirectoryLocation = mailDirectory
-                };
-            }
-            else
-            {
-                smtp = new SmtpClient
-                {
-                    Host = _smtpUrl,
-                    Port = _port,
-                    EnableSsl = true,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(_senderEmail, _senderPassword),
-                    DeliveryMethod = SmtpDeliveryMethod.Network
-                };
-            }
+        private SmtpClient CreateClientToLocalFolder()
+        {
+            if(string.IsNullOrEmpty(_mailLocalFolder))
+                _mailLocalFolder = Path.Combine(Environment.CurrentDirectory, "mails");
 
-            smtp.Send(message);
+            DirectoryManager.CreateDirectoryIfNotExists(_mailLocalFolder);
+
+            return new SmtpClient
+            {
+                DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
+                PickupDirectoryLocation = _mailLocalFolder
+            };
+        }
+
+        private SmtpClient CreateClientToRemoteMailServer()
+        {
+            return new SmtpClient
+            {
+                Host = _smtpUrl,
+                Port = _port,
+                EnableSsl = true,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(_senderEmail, _senderPassword),
+                DeliveryMethod = SmtpDeliveryMethod.Network
+            };
         }
 
         #endregion

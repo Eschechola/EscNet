@@ -2,6 +2,7 @@
 using EscNet.Mails.Functions;
 using EscNet.Mails.Interfaces;
 using EscNet.Mails.Models;
+using FluentAssertions;
 using Xunit;
 
 namespace EscNet.Tests.Mails
@@ -19,8 +20,8 @@ namespace EscNet.Tests.Mails
             _sut = new EmailSender(_emailSender, _passwordSender);
         }
 
-        [Fact]
-        public void EmailSender_SendEmail_SendEmailCorrectly()
+        [Fact(DisplayName = "SendEmail when email is sended")]
+        public void SendEmail_WhenSendEmailIsDone_ReturnsTrue()
         {
             // Arrange
             var email = new Email
@@ -30,8 +31,31 @@ namespace EscNet.Tests.Mails
                 Body = new Lorem().Text()
             };
 
-            // Act & Assert
-            _sut.SendEmail(email, sendToLocalFolder: true);
+            // Act
+            var result = _sut.SendEmail(email, sendToLocalFolder: true);
+
+            // Assert
+            result.Should()
+                .BeTrue();
+        }
+
+        [Fact(DisplayName = "SendEmailAsync when email is sended")]
+        public async void SendEmailAsync_WhenSendEmailIsDone_ReturnsTrue()
+        {
+            // Arrange
+            var email = new Email
+            {
+                Receiver = new Internet().Email(),
+                Subject = new Lorem().Letter(15),
+                Body = new Lorem().Text()
+            };
+
+            // Act
+            var result = await _sut.SendEmailAsync(email, sendToLocalFolder: true);
+
+            // Assert
+            result.Should()
+                .BeTrue();
         }
     }
 }

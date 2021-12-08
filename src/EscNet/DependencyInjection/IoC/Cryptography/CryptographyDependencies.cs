@@ -1,7 +1,8 @@
 ﻿using EscNet.Cryptography.Algorithms;
 using EscNet.Cryptography.Interfaces;
 using EscNet.Cryptography.Interfaces.Cryptography;
-using EscNet.Cryptography.Interfaces.Hash;
+using EscNet.Hashers.Algorithms;
+using EscNet.Hashers.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EscNet.DependencyInjection.IoC.Cryptography
@@ -22,7 +23,7 @@ namespace EscNet.DependencyInjection.IoC.Cryptography
 
         public static IServiceCollection AddSha1Hash(this IServiceCollection services)
         {
-            services.AddSingleton<ISha1Hash, Sha1Hash>();
+            services.AddSingleton<ISha1Hasher, Sha1Hasher>();
             return services;
         }
     }

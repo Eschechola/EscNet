@@ -2,6 +2,7 @@
 using EscNet.Cryptography.Algorithms;
 using EscNet.Cryptography.Interfaces.Cryptography;
 using EscNet.Shared.Exceptions;
+using FluentAssertions;
 using System;
 using Xunit;
 
@@ -18,7 +19,7 @@ namespace EscNet.Tests.Cryptography
             _sut = new RijndaelCryptography(_encryptionKey);
         }
 
-        [Fact]
+        [Fact(DisplayName = "RijndaelCryptography instance when key is invalid")]
         public void RijndaelCryptography_ThorwsWrongEncryptionKeyExceptionWhenEncryptionKeyIsInvalid()
         {
             // Arrange
@@ -32,13 +33,18 @@ namespace EscNet.Tests.Cryptography
             Action actToLong = () => new RijndaelCryptography(keyToLong);
 
             // Assert
-            Assert.Throws<WrongEncryptionKeyException>(actEmpty);
-            Assert.Throws<WrongEncryptionKeyException>(actNotEightMultiple);
-            Assert.Throws<WrongEncryptionKeyException>(actToLong);
+            actEmpty.Should()
+                .Throw<WrongEncryptionKeyException>();
+
+            actNotEightMultiple.Should()
+                .Throw<WrongEncryptionKeyException>();
+
+            actToLong.Should()
+                .Throw<WrongEncryptionKeyException>();
         }
 
-        [Fact]
-        public void RijndaelCryptography_Encrypt_ReturnsCorrectEncryptedText()
+        [Fact(DisplayName = "Encrypt when text is valid")]
+        public void Encrypt_WhenTextIsValid_ReturnsCorrectEncryptedText()
         {
             // Arrange
             string text = "Hello World!";
@@ -48,22 +54,23 @@ namespace EscNet.Tests.Cryptography
             var result = _sut.Encrypt(text);
 
             // Assert
-            Assert.Equal(correctEncryptedText, result);
+            result.Should()
+                .Equals(correctEncryptedText);
         }
 
-        [Fact]
-        public void RijndaelCryptography_Encrypt_ThrowExceptionWhenTextToEncryptIsInvalid()
+        [Fact(DisplayName = "Encrypt when text is null or empty")]
+        public void Encrypt_WhenTextIsNullOrEmpty_ThrowsException()
         {
             // Arrange & Act
             Func<string> act = () => _sut.Encrypt(string.Empty);
 
             // Assert
-            Assert.Throws<NullReferenceException>(act);
+            act.Should()
+                .Throw<NullReferenceException>();
         }
 
-
-        [Fact]
-        public void RijndaelCryptography_Decrypt_ReturnsCorrectDecryptedText()
+        [Fact(DisplayName = "Encrypt when text is valid")]
+        public void Decrypt_WhenTextIsValid_ReturnsCorrectDecryptedText()
         {
             // Arrange
             string text = "HZdioE5eNm2hgG98DRBqqA==";
@@ -73,33 +80,19 @@ namespace EscNet.Tests.Cryptography
             var result = _sut.Decrypt(text);
 
             // Assert
-            Assert.Equal(correctDecryptedText, result);
+            result.Should()
+                .Equals(correctDecryptedText);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Encrypt when text is null or empty")]
         public void RijndaelCryptography_Decrypt_ThrowExceptionWhenTextToDecryptIsInvalid()
         {
             //Arrange & Act
             Func<string> act = () => _sut.Decrypt(string.Empty);
 
             // Assert
-            Assert.Throws<NullReferenceException>(act);
-        }
-
-        [Fact]
-        public void RijndaelCryptography_EncryptAndDecrypt_ReturnsCorrectTexts()
-        {
-            // Arrange
-            string decryptedText = "Hello World!";
-            string encryptedText = "HZdioE5eNm2hgG98DRBqqA==";
-
-            // Act
-            var encryptResult = _sut.Encrypt(decryptedText);
-            var decryptResult = _sut.Decrypt(encryptedText);
-
-            // Assert
-            Assert.Equal(encryptedText, encryptResult);
-            Assert.Equal(decryptedText, decryptResult);
+            act.Should()
+                .Throw<NullReferenceException>();
         }
     }
 }
