@@ -2,7 +2,6 @@ using EscNet.Cryptography.Interfaces;
 using EscNet.Shared.Exceptions;
 using EscNet.Shared.Extensions;
 using EscNet.Shared.Validators;
-using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
