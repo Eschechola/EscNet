@@ -23,7 +23,10 @@
     <li><a href="https://github.com/Eschechola/EscNet/wiki/1.Emails">Emails</a></li>
     <li><a href="https://github.com/Eschechola/EscNet/wiki/2.Rijndael-Cryptography">Rijndael Cryptography</a></li>
     <li><a href="https://github.com/Eschechola/EscNet/wiki/3.Caesar-Cryptography">Caesar Cipher Cryptography</a></li>
-    <li><a href="https://github.com/Eschechola/EscNet/wiki/4.Sha1-Algorithm">Sha1 Cryptographic Report</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/4.Sha1-Algorithm">Sha1 Algorithm</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/5.Argon2Id-Algorithm">Argon2Id Algorithm</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/6.-SCrypt-Algorithm">SCrypt Algorithm</a></li>
+    <li><a href="https://github.com/Eschechola/EscNet/wiki/7.BCrypt-Algorithm">BCrypt Algorithm</a></li>
 </ul>
 
 <br><br>
