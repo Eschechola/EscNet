@@ -7,9 +7,7 @@ namespace EscNet.Shared.Directories
         public static bool CreateDirectoryIfNotExists(string path)
         {
             if (!Directory.Exists(path))
-            {
                 Directory.CreateDirectory(path);
-            }
 
             return true;
         }
