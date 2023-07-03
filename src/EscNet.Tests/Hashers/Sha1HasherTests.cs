@@ -39,7 +39,7 @@ namespace EscNet.Tests.Hashers
 
             // Assert
             result.Should()
-                .Equals(textHash);
+                .BeEquivalentTo(textHash);
         }
 
         [Fact(DisplayName = "VerifyHashedText when text is correct")]

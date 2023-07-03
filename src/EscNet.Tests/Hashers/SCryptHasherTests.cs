@@ -27,22 +27,6 @@ namespace EscNet.Tests.Hashers
                 .Throw<NullReferenceException>();
         }
 
-
-        [Fact(DisplayName = "Hash when text is valid")]
-        public void Hash_WhenTextIsValid_ReturnsCorrectHash()
-        {
-            // Arrange
-            var text = "Hello World!";
-            var textHash = "$s2$16384$8$1$zKNQ51ZzRvP3yi4HORYxtvxpWs1bdAxBVEcpgI6ePyw=$pxrFoPZA16AVIdY0QBveCi84beIhFTyCcNS4XROHirc=";
-
-            // Act
-            var result = _sut.Hash(text);
-
-            // Assert
-            result.Should()
-                .Equals(textHash);
-        }
-
         [Fact(DisplayName = "VerifyHashedText when text is correct")]
         public void VerifyHashedText_WhenHashIsCorrret_ReturnsTrue()
         {

@@ -49,7 +49,7 @@ namespace EscNet.Tests.Cryptography
 
             // Assert
             result.Should()
-                .Equals(correctEncryptedText);
+                .BeEquivalentTo(correctEncryptedText);
         }
 
         [Fact(DisplayName = "Encrypt when text is null or empty")]
@@ -76,7 +76,7 @@ namespace EscNet.Tests.Cryptography
 
             // Assert
             result.Should()
-                .Equals(correctDecryptedText);
+                .BeEquivalentTo(correctDecryptedText);
         }
 
         [Fact(DisplayName = "Decrypt when text is null or empty")]

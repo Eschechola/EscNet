@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
 	<NoWarn>$(NoWarn);SYSLIB0001;SYSLIB0002;SYSLIB0003</NoWarn>
     <Authors>Lucas Eschechola</Authors>
     <Company>CH Labs</Company>
@@ -32,9 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
-    <PackageReference Include="Isopoh.Cryptography.Argon2" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Isopoh.Cryptography.Argon2" Version="1.1.12" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Scrypt.NET" Version="1.3.0" />
   </ItemGroup>
 
