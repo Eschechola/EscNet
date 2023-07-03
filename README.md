@@ -2,6 +2,10 @@
 
 <br>
 
+[![Tests](https://github.com/Eschechola/EscNet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Eschechola/EscNet/actions/workflows/dotnet.yml)
+
+<br>
+
 <p>Open source micro framework made in .NET Standard, compatible with both .NET Core and .NET Framework developed by:<br><a href="https://www.linkedin.com/in/lucas-eschechola-769179166/">Lucas Eschechola</a>, built in order to automate everyday and common tasks in commercial applications, such as sending emails, encryption algorithms, encryption reports, log file generation and other functionality are currently under development. EscNet is available in the NuGet library or through the following link:</p>
 <br>
 <a href="https://www.nuget.org/packages/EscNet/">https://www.nuget.org/packages/EscNet/</a>
