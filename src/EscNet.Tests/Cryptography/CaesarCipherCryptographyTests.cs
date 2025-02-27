@@ -1,93 +1,91 @@
 ﻿using EscNet.Cryptography.Algorithms;
-using EscNet.Cryptography.Interfaces.Cryptography;
 using EscNet.Shared.Exceptions;
 using FluentAssertions;
 using System;
+using EscNet.Cryptography.Interfaces;
 using Xunit;
 
-namespace EscNet.Tests.Cryptography
+namespace EscNet.Tests.Cryptography;
+
+public class CaesarCipherCryptographyTests
 {
-    public class CaesarCipherCryptographyTests
+    private readonly ICryptography _sut;
+
+    public CaesarCipherCryptographyTests()
     {
-        private readonly ICryptography _sut;
-        private readonly int _keyUp;
+        const int keyUp = 5;
+        _sut = new CaesarCipherCryptography(keyUp);
+    }
 
-        public CaesarCipherCryptographyTests()
-        {
-            _keyUp = 5;
-            _sut = new CaesarCipherCryptography(_keyUp);
-        }
+    [Fact(DisplayName = "CaesarCipher instance when keyup is invalid")]
+    public void CaesarCipher_ThrowsInvalidKeyUpExceptionWhenKeyUpKeyIsInvalid()
+    {
+        // Arrange
+        const int zeroKeyUp = 0;
+        const int negativeKeyUp = -2;
 
-        [Fact(DisplayName = "CaesarCipher instance when keyup is invalid")]
-        public void CaesarCipher_ThorwsInvalidKeyUpExceptionWhenKeyUpKeyIsInvalid()
-        {
-            // Arrange
-            int zeroKeyUp = 0;
-            int negativeKeyUp = -2;
+        // Act
+        Action actZeroKeyUp = () => new CaesarCipherCryptography(zeroKeyUp);
+        Action actNegativeKeyUp = () => new CaesarCipherCryptography(negativeKeyUp);
 
-            // Act
-            Action actZeroKeyUp = () => new CaesarCipherCryptography(zeroKeyUp);
-            Action actNegativeKeyUp = () => new CaesarCipherCryptography(negativeKeyUp);
+        // Assert
+        actZeroKeyUp.Should()
+            .Throw<InvalidKeyUpException>();
 
-            // Assert
-            actZeroKeyUp.Should()
-                .Throw<InvalidKeyUpException>();
+        actNegativeKeyUp.Should()
+            .Throw<InvalidKeyUpException>();
+    }
 
-            actNegativeKeyUp.Should()
-                .Throw<InvalidKeyUpException>();
-        }
+    [Fact(DisplayName = "Encrypt when text is correct")]
+    public void Encrypt_WhenTextIsCorrect_ReturnsCorrectEncryptedText()
+    {
+        // Arrange
+        const string text = "Hello World!";
+        const string correctEncryptedText = @"Mjqqt \twqi&";
 
-        [Fact(DisplayName = "Encrypt when text is correct")]
-        public void Encrypt_WhenTextIsCorrect_ReturnsCorrectEncryptedText()
-        {
-            // Arrange
-            string text = "Hello World!";
-            string correctEncryptedText = @"Mjqqt \twqi&";
+        // Act
+        var result = _sut.Encrypt(text);
 
-            // Act
-            var result = _sut.Encrypt(text);
+        // Assert
+        result.Should()
+            .BeEquivalentTo(correctEncryptedText);
+    }
 
-            // Assert
-            result.Should()
-                .BeEquivalentTo(correctEncryptedText);
-        }
+    [Fact(DisplayName = "Encrypt when text is null or empty")]
+    public void Encrypt_WhenTextIsNullOrEmpty_ThrowsException()
+    {
+        // Arrange & Act
+        var act = () => _sut.Encrypt(string.Empty);
 
-        [Fact(DisplayName = "Encrypt when text is null or empty")]
-        public void Encrypt_WhenTextIsNullOrEmpty_ThrowsException()
-        {
-            // Arrange & Act
-            Func<string> act = () => _sut.Encrypt(string.Empty);
-
-            // Assert
-            act.Should()
-                .Throw<NullReferenceException>();
-        }
+        // Assert
+        act.Should()
+            .Throw<NullReferenceException>();
+    }
 
 
-        [Fact(DisplayName = "Dencrypt when text is correct")]
-        public void Decrypt_WhenTextIsCorrect_ReturnsCorrectDecryptedText()
-        {
-            // Arrange
-            string text = @"Mjqqt \twqi&";
-            string correctDecryptedText = "Hello World!";
+    [Fact(DisplayName = "Decrypt when text is correct")]
+    public void Decrypt_WhenTextIsCorrect_ReturnsCorrectDecryptedText()
+    {
+        // Arrange
+        const string text = @"Mjqqt \twqi&";
+        const string correctDecryptedText = "Hello World!";
 
-            // Act
-            var result = _sut.Decrypt(text);
+        // Act
+        var result = _sut.Decrypt(text);
 
-            // Assert
-            result.Should()
-                .BeEquivalentTo(correctDecryptedText);
-        }
+        // Assert
+        result.Should()
+            .BeEquivalentTo(correctDecryptedText);
+    }
 
-        [Fact(DisplayName = "Decrypt when text is null or empty")]
-        public void Decrypt_WhenTextIsNullOrEmpty_ThrowsException()
-        {
-            //Arrange & Act
-            Func<string> act = () => _sut.Decrypt(string.Empty);
+    [Fact(DisplayName = "Decrypt when text is null or empty")]
+    public void Decrypt_WhenTextIsNullOrEmpty_ThrowsException()
+    {
+        //Arrange & Act
+        var act = () => _sut.Decrypt(string.Empty);
 
-            // Assert
-            act.Should()
-                .Throw<NullReferenceException>();
-        }
+        // Assert
+        act.Should()
+            .Throw<NullReferenceException>();
     }
 }

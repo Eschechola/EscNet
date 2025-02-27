@@ -1,8 +1,7 @@
-namespace EscNet.Cryptography.Interfaces.Cryptography
+namespace EscNet.Cryptography.Interfaces;
+
+public interface ICryptography
 {
-    public interface ICryptography
-    {
-        string Encrypt(string text);
-        string Decrypt(string text);
-    }
+    string Encrypt(string text);
+    string Decrypt(string text);
 }
