@@ -1,8 +1,7 @@
-﻿namespace EscNet.Mails.Enums
+﻿namespace EscNet.Mails.Enums;
+
+public enum SMTPType
 {
-    public enum SMTPType
-    {
-        Gmail,
-        Outlook
-    }
+    Gmail,
+    Outlook
 }
