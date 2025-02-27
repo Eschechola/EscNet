@@ -6,7 +6,7 @@
 
 <br>
 
-<p>Open source micro framework made in .NET Standard, compatible with both .NET Core and .NET Framework developed by:<br><a href="https://www.linkedin.com/in/lucas-eschechola-769179166/">Lucas Eschechola</a>, built in order to automate everyday and common tasks in commercial applications, such as sending emails, encryption algorithms, encryption reports, log file generation and other functionality are currently under development. EscNet is available in the NuGet library or through the following link:</p>
+<p>Open source micro framework made in .NET Standard, compatible with both .NET Core and .NET Framework developed by:<br><a href="https://www.linkedin.com/in/lucas-eschechola">Lucas Eschechola</a>, built in order to automate everyday and common tasks in commercial applications, such as sending emails, encryption algorithms, encryption reports, log file generation and other functionality are currently under development. EscNet is available in the NuGet library or through the following link:</p>
 <br>
 <a href="https://www.nuget.org/packages/EscNet/">https://www.nuget.org/packages/EscNet/</a>
 
@@ -39,7 +39,7 @@
 
 <br>
 
-<p>In case of any error or security breach, please report immediately and in a totally private way, because only in this way will I be able to improve the Micro Framework and its usability more and more, you can alert me through the email <a href="mailto:lucas.eschechola@outlook.com">lucas.eschechola@outlook.com</a> or <a href="mailto:suporte@eschechola.com.br">suporte@eschechola.com.br</a>, if you prefer you can contact me directly through my <a href="https://www.linkedin.com/in/lucas-eschechola-769179166/">LinkedIn</a>, thanks!</p>
+<p>In case of any error or security breach, please report immediately and in a totally private way, because only in this way will I be able to improve the Micro Framework and its usability more and more, you can alert me through the email <a href="mailto:lucas.eschechola@outlook.com">lucas.eschechola@outlook.com</a> or <a href="mailto:suporte@eschechola.com.br">suporte@eschechola.com.br</a>, if you prefer you can contact me directly through my <a href="https://www.linkedin.com/in/lucas-eschechola/">LinkedIn</a>, thanks!</p>
 
 <br></br>
 
@@ -55,6 +55,6 @@
 <br><br>
 <br>
 
-<p align="center">2020 &copy;</p>
+<p align="center">2025 &copy;</p>
 
 <br>
