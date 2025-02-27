@@ -8,7 +8,7 @@
     <Product>EscNet</Product>
     <Description>EscNet is a micro framework developed by Lucas Eschechola for automating everyday tasks, such as: sending emails, encryption and more!!</Description>
     <PackageProjectUrl>https://github.com/Eschechola/EscNet</PackageProjectUrl>
-    <PackageIcon>EscNet-Icon.jpg</PackageIcon>
+    <PackageIcon>icon.jpg</PackageIcon>
     <RepositoryUrl>https://github.com/Eschechola/EscNet</RepositoryUrl>
     <PackageTags>#DOTNET, #CSHARP, #FRAMEWORK</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,17 +20,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\.editorconfig" Link=".editorconfig" />
-    <None Include="E:\OneDrive\Files\Imagens\EscNet-Icon.jpg">
-      <Pack>True</Pack>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Isopoh.Cryptography.Argon2" Version="2.0.0" />
     <PackageReference Include="Isopoh.Cryptography.Blake2b" Version="2.0.0" />
@@ -39,5 +28,18 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     <PackageReference Include="Scrypt.NET" Version="1.3.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    
+    <None Include="..\..\..\..\icon.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>  
+  </ItemGroup>
+  
 
 </Project>

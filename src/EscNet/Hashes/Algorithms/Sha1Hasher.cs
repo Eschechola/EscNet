@@ -8,7 +8,7 @@ namespace EscNet.Hashes.Algorithms;
 
 public class Sha1Hasher : Hasher, ISha1Hasher
 {
-    private readonly SHA1CryptoServiceProvider sha1CryptoTransform = new();
+    private readonly SHA1 sha1CryptoTransform = SHA1.Create();
 
     public override string Hash(string text)
     {
