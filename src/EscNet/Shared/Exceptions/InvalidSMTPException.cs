@@ -1,19 +1,18 @@
 ﻿using System;
 
-namespace EscNet.Shared.Exceptions
+namespace EscNet.Shared.Exceptions;
+
+public class InvalidSMTPException : Exception
 {
-    public class InvalidSMTPException : Exception
+    public InvalidSMTPException()
     {
-        public InvalidSMTPException()
-        {
-        }
+    }
 
-        public InvalidSMTPException(string message) : base(message)
-        {
-        }
+    public InvalidSMTPException(string message) : base(message)
+    {
+    }
 
-        public InvalidSMTPException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
+    public InvalidSMTPException(string message, Exception innerException) : base(message, innerException)
+    {
     }
 }

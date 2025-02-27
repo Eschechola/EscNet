@@ -1,6 +1,3 @@
-﻿namespace EscNet.Cryptography.Interfaces.Cryptography
-{
-    public interface ICaesarCipherCryptography : ICryptography
-    {
-    }
-}
+﻿namespace EscNet.Cryptography.Interfaces;
+
+public interface ICaesarCipherCryptography : ICryptography;

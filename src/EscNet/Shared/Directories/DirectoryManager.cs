@@ -1,15 +1,12 @@
 ﻿using System.IO;
 
-namespace EscNet.Shared.Directories
-{
-    public static class DirectoryManager
-    {
-        public static bool CreateDirectoryIfNotExists(string path)
-        {
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
+namespace EscNet.Shared.Directories;
 
-            return true;
-        }
+public static class DirectoryManager
+{
+    public static void CreateDirectoryIfNotExists(string path)
+    {
+        if (path != null && !Directory.Exists(path))
+            Directory.CreateDirectory(path);
     }
 }

@@ -1,76 +1,71 @@
-﻿using EscNet.Cryptography.Interfaces.Cryptography;
-using EscNet.Shared.Exceptions;
+﻿using EscNet.Shared.Exceptions;
 using EscNet.Shared.Validators;
 using System;
+using EscNet.Cryptography.Interfaces;
 
-namespace EscNet.Cryptography.Algorithms
+namespace EscNet.Cryptography.Algorithms;
+
+public class CaesarCipherCryptography : ICaesarCipherCryptography
 {
-    public class CaesarCipherCryptography : ICaesarCipherCryptography
+    private readonly int _keyUp;
+
+    public CaesarCipherCryptography(int keyup)
     {
-        private readonly int _keyUp;
+        ValidateKeyUp(keyup);
+        _keyUp = keyup;
+    }
 
-        public CaesarCipherCryptography(int keyup)
+    public string Encrypt(string text)
+    {
+        Validator.ValidateStringIsNotNullOrEmpty(text);
+
+        var encryptedText = string.Empty;
+
+        foreach (var t in text)
         {
-            ValidateKeyUp(keyup);
-            _keyUp = keyup;
-        }
-
-        public string Encrypt(string text)
-        {
-            Validator.ValidateStringIsNotNullOrEmpty(text);
-
-            string encriptedText = string.Empty;
-            char character = ' ';
-            int asciiNumber = 0;
-
-            for (int i = 0; i < text.Length; i++)
+            // ignore blank spaces
+            if (t == ' ')
             {
-                //ignore blank spaces
-                if (text[i] == ' ')
-                {
-                    encriptedText += ' ';
-                    continue;
-                }
-
-                character = Convert.ToChar(text[i]);
-                asciiNumber = character;
-
-                encriptedText += (char)(asciiNumber + _keyUp);
+                encryptedText += ' ';
+                continue;
             }
 
-            return encriptedText;
+            var character = Convert.ToChar(t);
+            int asciiNumber = character;
+
+            encryptedText += (char)(asciiNumber + _keyUp);
         }
 
-        public string Decrypt(string text)
+        return encryptedText;
+    }
+
+    public string Decrypt(string text)
+    {
+        Validator.ValidateStringIsNotNullOrEmpty(text);
+
+        var decryptedText = string.Empty;
+
+        foreach (var t in text)
         {
-            Validator.ValidateStringIsNotNullOrEmpty(text);
-
-            string decryptedText = string.Empty;
-            char character = ' ';
-            int asciiNumber = 0;
-
-            for (int i = 0; i < text.Length; i++)
+            // ignore blank spaces
+            if (t == ' ')
             {
-                //ignore blank spaces
-                if (text[i] == ' ')
-                {
-                    decryptedText += ' ';
-                    continue;
-                }
-
-                character = Convert.ToChar(text[i]);
-                asciiNumber = character;
-
-                decryptedText += (char)(asciiNumber - _keyUp);
+                decryptedText += ' ';
+                continue;
             }
 
-            return decryptedText;
+            var character = Convert.ToChar(t);
+            int asciiNumber = character;
+
+            decryptedText += (char)(asciiNumber - _keyUp);
         }
 
-        private void ValidateKeyUp(int keyup)
-        {
-            if (keyup <= 0)
-                throw new InvalidKeyUpException("Keyup must be greater than or equal 1");
-        }
+        return decryptedText;
+    }
+
+    private static void ValidateKeyUp(int keyup)
+    {
+        if (keyup <= 0)
+            throw new InvalidKeyUpException("Keyup must be greater than or equal 1");
     }
 }
