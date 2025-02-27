@@ -20,7 +20,7 @@ public class EmailSenderTests
         _sut = new EmailSender(emailSender, passwordSender);
     }
 
-    [Fact(DisplayName = "SendEmail when email is sended")]
+    [Fact(DisplayName = "SendEmail when email is sent")]
     public void SendEmail_WhenSendEmailIsDone_ReturnsTrue()
     {
         // Arrange
@@ -39,7 +39,7 @@ public class EmailSenderTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "SendEmailAsync when email is sended")]
+    [Fact(DisplayName = "SendEmailAsync when email is sent")]
     public async Task SendEmailAsync_WhenSendEmailIsDone_ReturnsTrue()
     {
         // Arrange
