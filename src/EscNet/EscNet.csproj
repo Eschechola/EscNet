@@ -8,7 +8,7 @@
     <Product>EscNet</Product>
     <Description>EscNet is a micro framework developed by Lucas Eschechola for automating everyday tasks, such as: sending emails, encryption and more!!</Description>
     <PackageProjectUrl>https://github.com/Eschechola/EscNet</PackageProjectUrl>
-    <PackageIcon>EscNet-Icon.jpg</PackageIcon>
+    <PackageIcon>icon.jpg</PackageIcon>
     <RepositoryUrl>https://github.com/Eschechola/EscNet</RepositoryUrl>
     <PackageTags>#DOTNET, #CSHARP, #FRAMEWORK</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -24,9 +24,9 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\..\.editorconfig" Link=".editorconfig" />
-    <None Include="E:\OneDrive\Files\Imagens\EscNet-Icon.jpg">
+    <None Include="..\..\..\..\icon.jpg">
       <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

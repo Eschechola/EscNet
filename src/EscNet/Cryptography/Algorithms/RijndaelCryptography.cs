@@ -33,7 +33,7 @@ public class RijndaelCryptography : IRijndaelCryptography
         var encryptionKeyBytes = _encryptionKey.FromBase64();
         var textBytes = new UTF8Encoding().GetBytes(text);
 
-        var rijndaelAlgorithm = new RijndaelManaged();
+        var rijndaelAlgorithm = Aes.Create();
         rijndaelAlgorithm.KeySize = 256;
 
         var memoryStream = new MemoryStream();
@@ -56,7 +56,7 @@ public class RijndaelCryptography : IRijndaelCryptography
         var encryptionKeyBytes = _encryptionKey.FromBase64();
         var textBytes = text.FromBase64();
 
-        var rijndaelAlgorithm = new RijndaelManaged();
+        var rijndaelAlgorithm = Aes.Create();
         rijndaelAlgorithm.KeySize = 256;
 
         var memoryStream = new MemoryStream();
