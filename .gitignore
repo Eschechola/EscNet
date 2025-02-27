@@ -6,6 +6,7 @@
 # Rider
 .github
 .idea
+.editorconfig
 
 # User-specific files
 *.rsuser
